@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">username</th>
+        <th scope="col">Description</th>
+        <th scope="col">following</th>
+        <th scope="col">followers</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in users %}
+            <tr>
+                <td>
+                    <a href="{% url 'teen' data.id %}">
+                        <div>
+                            {{ data.name }}
+                        </div>
+                    </a>
+                </td>
+                <td>{{ data.username }}</td>
+                <td>{{ data.description }}</td>
+                <td>{{ data.following }}</td>
+                <td>{{ data.followers }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

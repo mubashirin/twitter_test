@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <form method="post" action="{% url 'list_links' %}">
+      {% csrf_token %}
+      <div class="form-group">
+          <label for="exampleFormControlTextarea1">Введите список сюда</label>
+          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Парсить</button>
+  </form>
+{% endblock %}
